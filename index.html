@@ -4,151 +4,500 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
   <title>William Lu（呂允仁）— 電子名片</title>
-  <meta name="description" content="William Lu（呂允仁）— AI / Weather & HPC / Web">
-  <meta name="theme-color" content="#0b0b0c">
+  <meta name="description" content="William Lu（呂允仁）的電子名片。AI、氣象與 HPC、Web。可用 NFC 貼紙、QR 或靠近分享打開。">
+  <meta name="theme-color" content="#080a09">
+  <meta name="color-scheme" content="dark">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-title" content="William">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <link rel="canonical" href="https://eight826.github.io/will.lu.08.github.io/">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="favicon-32.png" sizes="32x32" type="image/png">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
+  <link rel="manifest" href="site.webmanifest">
+  <meta property="og:title" content="William Lu（呂允仁）">
+  <meta property="og:description" content="AI、氣象與 HPC、Web。碰一下或掃碼即可打開電子名片。">
+  <meta property="og:type" content="profile">
+  <meta property="og:url" content="https://eight826.github.io/will.lu.08.github.io/">
+  <meta property="og:image" content="https://eight826.github.io/will.lu.08.github.io/og.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="William Lu（呂允仁）電子名片">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="William Lu（呂允仁）">
+  <meta name="twitter:description" content="AI、氣象與 HPC、Web。碰一下或掃碼即可打開電子名片。">
+  <meta name="twitter:image" content="https://eight826.github.io/will.lu.08.github.io/og.png">
+  <link rel="me" href="https://github.com/Eight826">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "William Lu",
+    "alternateName": "呂允仁",
+    "email": "mailto:williamlu16888@gmail.com",
+    "telephone": "+886903336960",
+    "url": "https://eight826.github.io/will.lu.08.github.io/",
+    "jobTitle": "AI & Programmer",
+    "worksFor": { "@type": "Organization", "name": "Novara.tech", "url": "https://novara.tech" },
+    "sameAs": [
+      "https://github.com/Eight826",
+      "https://eight826.github.io/",
+      "https://novara.tech"
+    ]
+  }
+  </script>
   <style>
-    :root{
-      --bg:#0b0b0c;
-      --card:#121214;
-      --text:#eaeaea;
-      --muted:#a0a0a0;
-      --accent:#5fd7b9;
-      --accent-press:#4cc7aa;
-      --border:#222226;
-      --link:#9ad7ff;
-      --shadow: 0 10px 30px rgba(0,0,0,0.45), 0 2px 10px rgba(0,0,0,0.35);
-      --radius: 16px;
-      --maxw: 720px;
+    :root {
+      --bg: #080a09;
+      --ink: #f4f1e8;
+      --muted: #c5d0c4;
+      --dim: #8e9c90;
+      --line: rgba(244, 241, 232, 0.16);
+      --phosphor: #d6ff4a;
+      --phosphor-ink: #142006;
+      --plate: #f4f1e8;
+      --plate-ink: #102117;
+      --sans: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI",
+        "Noto Sans TC", "PingFang TC", "Microsoft JhengHei",
+        "WenQuanYi Micro Hei", "Droid Sans Fallback", sans-serif;
+      --serif: "Iowan Old Style", "Palatino Linotype", Palatino, "Songti TC",
+        "Noto Serif TC", "Liberation Serif", "Times New Roman", serif;
+      --mono: ui-monospace, "SF Mono", "Cascadia Mono", Menlo, Consolas, monospace;
     }
-    html,body{
-      height:100%;
-      background:var(--bg);
-      color:var(--text);
-      font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI",
-                   "Noto Sans TC", "PingFang TC", "Microsoft JhengHei",
-                   Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji", sans-serif;
-      line-height:1.6;
-      -webkit-font-smoothing:antialiased;
-      -moz-osx-font-smoothing:grayscale;
-      margin:0;
+    *, *::before, *::after { box-sizing: border-box; }
+    html { color-scheme: dark; }
+    html, body { margin: 0; min-height: 100%; }
+    body {
+      background:
+        radial-gradient(900px 420px at 100% -10%, rgba(214, 255, 74, 0.08), transparent 55%),
+        radial-gradient(680px 480px at -20% 110%, rgba(140, 176, 255, 0.07), transparent 50%),
+        var(--bg);
+      color: var(--ink);
+      font-family: var(--sans);
+      font-size: 16px;
+      line-height: 1.5;
+      -webkit-font-smoothing: antialiased;
+      padding:
+        env(safe-area-inset-top)
+        env(safe-area-inset-right)
+        env(safe-area-inset-bottom)
+        env(safe-area-inset-left);
     }
-    .wrap{
-      min-height:100%;
-      display:grid;
-      place-items:center;
-      padding:32px 16px;
+    ::selection { background: var(--phosphor); color: var(--phosphor-ink); }
+    :focus-visible { outline: 2px solid var(--phosphor); outline-offset: 3px; }
+    .card {
+      width: min(440px, 100%);
+      margin: 0 auto;
+      padding: 28px 22px 40px;
     }
-    .card{
-      width:100%;
-      max-width:var(--maxw);
-      background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0)) , var(--card);
-      border:1px solid var(--border);
-      border-radius:var(--radius);
-      box-shadow:var(--shadow);
-      padding:28px;
+    .eyebrow {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin: 0;
+      color: var(--phosphor);
+      font-size: 12px;
+      letter-spacing: 0.16em;
     }
-    .row{ display:flex; gap:24px; align-items:center; }
-    .avatar{
-      width:80px; height:80px; border-radius:14px; background:#1a1a1d; border:1px solid var(--border);
-      display:grid; place-items:center; color:#7f8cff; font-weight:700; letter-spacing:0.5px;
+    .dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--phosphor);
+      box-shadow: 0 0 0 0 rgba(214, 255, 74, 0.6);
+      animation: ping 2.6s ease-out infinite;
     }
-    .title{ flex:1; }
-    h1{
-      font-size: clamp(22px, 3.6vw, 30px);
-      line-height:1.25; margin:0 0 6px 0;
+    @keyframes ping {
+      70% { box-shadow: 0 0 0 8px rgba(214, 255, 74, 0); }
     }
-    .role{
-      color:var(--muted);
-      font-size: clamp(14px, 2.6vw, 16px);
-      margin:0;
+    .ticks {
+      height: 22px;
+      margin: 18px 0 22px;
+      background: repeating-linear-gradient(
+        90deg,
+        rgba(214, 255, 74, 0.85) 0 1px,
+        transparent 1px 14px
+      );
+      -webkit-mask-image: linear-gradient(90deg, #000 0%, #000 72%, transparent 100%);
+      mask-image: linear-gradient(90deg, #000 0%, #000 72%, transparent 100%);
     }
-    .hr{ height:1px; background:var(--border); margin:20px 0; border:0; }
-    .list{
-      display:grid; gap:10px;
-      grid-template-columns: 1fr;
+    h1 {
+      margin: 0;
+      font-family: var(--serif);
+      font-size: clamp(44px, 12vw, 64px);
+      font-weight: 700;
+      letter-spacing: -0.035em;
+      line-height: 0.92;
+      text-wrap: balance;
     }
-    .item{
-      display:flex; align-items:center; gap:12px;
-      padding:12px 14px; border:1px solid var(--border);
-      border-radius:12px; background:#121214;
+    .zh {
+      margin: 12px 0 0;
+      font-size: 20px;
+      letter-spacing: 0.28em;
     }
-    .item a{
-      color:var(--link); text-decoration:none; word-break:break-all;
+    .roles {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin: 18px 0 0;
+      padding: 0;
+      list-style: none;
     }
-    .item a:hover{ text-decoration:underline; }
-    .actions{ display:flex; gap:12px; margin-top:18px; flex-wrap:wrap; }
-    .btn{
-      appearance:none; border:1px solid var(--border);
-      background:linear-gradient(180deg, rgba(95,215,185,0.16), rgba(95,215,185,0.06));
-      color:var(--text); padding:12px 16px; border-radius:12px;
-      cursor:pointer; font-weight:600; transition:transform .02s ease, background .2s ease;
-      text-decoration:none; display:inline-flex; align-items:center; gap:10px;
+    .roles li {
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      padding: 6px 10px;
+      color: var(--muted);
+      font-size: 13px;
+      letter-spacing: 0.04em;
     }
-    .btn:active{ transform:translateY(1px); background:linear-gradient(180deg, rgba(95,215,185,0.24), rgba(95,215,185,0.08)); }
-    .btn .dot{ width:8px; height:8px; border-radius:50%; background:var(--accent); box-shadow:0 0 0 3px rgba(95,215,185,0.18); }
-    .note{ color:var(--muted); font-size:13px; margin-top:10px; }
-    footer{
-      color:var(--muted); text-align:center; font-size:12px; margin-top:16px;
+    .org {
+      margin: 14px 0 0;
+      color: var(--dim);
+      font-size: 13px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
     }
-    @media (min-width:560px){
-      .list{
-        grid-template-columns: 1fr 1fr;
+    .org a { color: inherit; }
+    .intro {
+      margin: 22px 0 0;
+      max-width: 34em;
+      color: var(--muted);
+      font-size: 16px;
+      text-wrap: pretty;
+    }
+    .save {
+      margin-top: 22px;
+    }
+    .contacts {
+      margin: 22px 0 0;
+      padding: 0;
+      list-style: none;
+    }
+    .contacts a {
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+      padding: 13px 0;
+      border-top: 1px solid var(--line);
+      color: inherit;
+      text-decoration: none;
+    }
+    .contacts li:last-child a { border-bottom: 1px solid var(--line); }
+    .k {
+      color: var(--dim);
+      font-size: 12px;
+      letter-spacing: 0.08em;
+    }
+    .v {
+      font-size: 16px;
+      overflow-wrap: anywhere;
+    }
+    .contacts a[target="_blank"] .v::after {
+      content: " ↗";
+      color: var(--phosphor);
+    }
+    .share {
+      margin-top: 36px;
+    }
+    .share h2 {
+      margin: 0;
+      font-family: var(--serif);
+      font-size: 28px;
+      font-weight: 700;
+      letter-spacing: -0.03em;
+    }
+    .lead {
+      margin: 8px 0 0;
+      color: var(--muted);
+      font-size: 15px;
+    }
+    .plate {
+      margin-top: 16px;
+      background: var(--plate);
+      color: var(--plate-ink);
+      border-radius: 22px;
+      padding: 18px 16px 14px;
+      display: grid;
+      justify-items: center;
+      gap: 10px;
+    }
+    .plate img {
+      width: min(232px, 78%);
+      height: auto;
+      display: block;
+    }
+    .host {
+      margin: 0;
+      font-family: var(--mono);
+      font-size: 12px;
+      line-height: 1.45;
+      text-align: center;
+    }
+    .stack {
+      display: grid;
+      gap: 10px;
+      margin-top: 14px;
+    }
+    .btn {
+      appearance: none;
+      width: 100%;
+      min-height: 52px;
+      padding: 0 18px;
+      border-radius: 999px;
+      border: 1px solid var(--line);
+      background: transparent;
+      color: var(--ink);
+      font: inherit;
+      font-size: 15px;
+      font-weight: 650;
+      letter-spacing: 0.01em;
+      cursor: pointer;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .btn.primary {
+      background: var(--phosphor);
+      color: var(--phosphor-ink);
+      border-color: transparent;
+      font-weight: 700;
+    }
+    .btn.quiet {
+      min-height: 44px;
+      border-color: transparent;
+      color: var(--muted);
+      text-decoration: underline;
+      text-underline-offset: 3px;
+    }
+    .btn:active { transform: translateY(1px); }
+    .btn:disabled { opacity: 0.55; cursor: wait; }
+    .status {
+      min-height: 0;
+      margin: 12px 0 0;
+      color: var(--phosphor);
+      font-size: 14px;
+    }
+    .status:empty { display: none; }
+    .steps {
+      margin: 18px 0 0;
+      padding: 0;
+      list-style: none;
+      display: grid;
+      gap: 12px;
+    }
+    .steps li {
+      display: grid;
+      grid-template-columns: 18px 1fr;
+      gap: 10px;
+      color: var(--muted);
+      font-size: 13.5px;
+      line-height: 1.55;
+    }
+    .steps li span {
+      color: var(--phosphor);
+      font-variant-numeric: tabular-nums;
+    }
+    .how { margin-top: 8px; }
+    .how summary {
+      min-height: 44px;
+      display: flex;
+      align-items: center;
+      cursor: pointer;
+      color: var(--muted);
+      font-size: 14px;
+    }
+    .fine {
+      margin: 4px 0 0;
+      color: var(--dim);
+      font-size: 12.5px;
+      line-height: 1.55;
+    }
+    footer {
+      margin-top: 28px;
+      color: var(--dim);
+      font-size: 12px;
+    }
+    footer a { color: inherit; }
+    @media (min-width: 720px) {
+      .card {
+        margin-top: 48px;
+        margin-bottom: 48px;
+        border: 1px solid var(--line);
+        border-radius: 28px;
+        padding: 36px 28px 28px;
+        background:
+          linear-gradient(180deg, rgba(255, 255, 255, 0.035), transparent 120px),
+          #0c0f0d;
       }
     }
-    @media (max-width:400px){
-      .row{ gap:16px; }
-      .avatar{ width:68px; height:68px; }
-      .card{ padding:22px; }
+    @media (hover: hover) {
+      .btn.primary:hover { background: #e7ff86; }
+      .btn:hover { border-color: rgba(214, 255, 74, 0.5); }
+      .btn.quiet:hover { color: var(--ink); }
+      .contacts a:hover .v { color: var(--phosphor); }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .dot { animation: none; }
+      .btn:active { transform: none; }
     }
   </style>
 </head>
 <body>
-  <main class="wrap" role="main">
-    <section class="card" aria-label="電子名片">
-      <div class="row">
-        <div class="avatar" aria-hidden="true">WL</div>
-        <div class="title">
-          <h1>William Lu（呂允仁）</h1>
-          <p class="role">AI / Weather &amp; HPC / Web</p>
-        </div>
-      </div>
+  <main class="card">
+    <p class="eyebrow"><span class="dot" aria-hidden="true"></span>電子名片</p>
+    <div class="ticks" aria-hidden="true"></div>
+    <header>
+      <h1>William Lu</h1>
+      <p class="zh">呂允仁</p>
+      <ul class="roles">
+        <li>AI</li>
+        <li>氣象與 HPC</li>
+        <li>Web</li>
+      </ul>
+      <p class="org"><a href="https://novara.tech" rel="noopener noreferrer">Novara.tech</a></p>
+    </header>
 
-      <hr class="hr">
+    <p class="intro">想找我合作，或只是剛認識，把這頁留下就好。</p>
 
-      <div class="list" aria-label="聯絡方式">
-        <div class="item">
-          <span style="color:#9ad7ff;">Email：</span>
-          <a href="mailto:williamlu16888@gmail.com">williamlu16888@gmail.com</a>
-        </div>
-        <div class="item">
-          <span style="color:#9ad7ff;">GitHub：</span>
-          <a href="https://github.com/Spidy0826" rel="noopener noreferrer" target="_blank">github.com/Spidy0826</a>
-        </div>
-        <div class="item">
-          <span style="color:#9ad7ff;">網站：</span>
-          <a href="https://will.lu.08.github.io/" rel="noopener noreferrer" target="_blank">will.lu.08.github.io</a>
-        </div>
-      </div>
+    <a class="btn primary save" href="./me.vcf" download="William-Lu.vcf">存進通訊錄</a>
 
-      <div class="actions">
-        <a class="btn" href="./me.vcf" download>
-          <span class="dot" aria-hidden="true"></span>
-          加入聯絡人（vCard）
+    <ul class="contacts">
+      <li>
+        <a href="mailto:williamlu16888@gmail.com">
+          <span class="k">電子郵件</span>
+          <span class="v">williamlu16888@gmail.com</span>
         </a>
-      </div>
+      </li>
+      <li>
+        <a href="tel:+886903336960">
+          <span class="k">手機</span>
+          <span class="v">+886 903 336 960</span>
+        </a>
+      </li>
+      <li>
+        <a href="https://github.com/Eight826" rel="me noopener noreferrer" target="_blank">
+          <span class="k">GitHub</span>
+          <span class="v">github.com/Eight826</span>
+        </a>
+      </li>
+      <li>
+        <a href="https://eight826.github.io/" rel="noopener noreferrer" target="_blank">
+          <span class="k">部落格</span>
+          <span class="v">eight826.github.io</span>
+        </a>
+      </li>
+    </ul>
 
-      <p class="note">提示：若 LinkedIn / GitHub 連結為範例，請在上線前替換為你的實際個人連結。</p>
+    <section class="share" id="share" aria-labelledby="share-title">
+      <h2 id="share-title">碰一下就打開</h2>
+      <p class="lead">把這個網址寫進 NFC 貼紙，貼在手機殼上。對方的手機靠過來，就會打開這張名片。</p>
+      <div class="plate">
+        <img src="qr.svg" width="180" height="180" alt="電子名片網址的 QR code">
+        <p class="host">eight826.github.io/<wbr>will.lu.08.github.io</p>
+      </div>
+      <div class="stack">
+        <button class="btn primary" id="write-nfc" type="button">寫入 NFC 貼紙</button>
+        <button class="btn" id="native-share" type="button">靠近分享</button>
+        <button class="btn quiet" id="copy-url" type="button">複製網址</button>
+      </div>
+      <p class="status" id="share-status" role="status" aria-live="polite"></p>
+      <details class="how">
+        <summary>怎麼寫入與貼上</summary>
+        <ol class="steps">
+          <li><span>1</span>用 Android 的 Chrome 打開這頁，按「寫入 NFC 貼紙」，再把空白貼紙靠在手機背面。</li>
+          <li><span>2</span>寫好後貼在手機殼上。之後把你的手機靠向對方的手機，對方就會看到這張名片。</li>
+          <li><span>3</span>沒有貼紙時，請對方掃 QR，或按「靠近分享」。Android 用 Quick Share，iPhone 用 AirDrop。</li>
+        </ol>
+        <p class="fine">手機上的網頁沒辦法模擬 NFC 標籤，所以兩支手機不能靠網頁直接互傳。iPhone 可以讀貼紙；若要寫入，請用 Android Chrome，或用 NFC Tools 寫進 NTAG213／215 貼紙。寫入的內容只有這個公開網址。</p>
+      </details>
     </section>
 
     <footer>
-      © <span id="y"></span> William Lu. All rights reserved.
+      <p>© <span id="y">2026</span> William Lu</p>
     </footer>
   </main>
-
+  <noscript>
+    <p>沒有 JavaScript 時，仍可掃 QR、存進通訊錄，以及打開上面的聯絡方式。寫入 NFC 需要 JavaScript。</p>
+  </noscript>
   <script>
-    (function(){
-      var el = document.getElementById('y');
-      try { el.textContent = new Date().getFullYear(); } catch(e) { /* noop */ }
+    (function () {
+      var year = document.getElementById("y");
+      if (year) year.textContent = String(new Date().getFullYear());
+
+      var cardUrl = document.querySelector('link[rel="canonical"]').href;
+      var statusEl = document.getElementById("share-status");
+
+      function setStatus(message) {
+        statusEl.textContent = message;
+      }
+
+      function copyFallback(text) {
+        var field = document.createElement("textarea");
+        field.value = text;
+        field.setAttribute("readonly", "");
+        field.style.position = "fixed";
+        field.style.left = "-9999px";
+        document.body.appendChild(field);
+        field.select();
+        var ok = false;
+        try { ok = document.execCommand("copy"); } catch (err) { ok = false; }
+        field.remove();
+        return ok;
+      }
+
+      document.getElementById("copy-url").addEventListener("click", function () {
+        var done = function () { setStatus("已複製名片網址。"); };
+        if (navigator.clipboard && navigator.clipboard.writeText) {
+          navigator.clipboard.writeText(cardUrl).then(done).catch(function () {
+            setStatus(copyFallback(cardUrl) ? "已複製名片網址。" : cardUrl);
+          });
+          return;
+        }
+        setStatus(copyFallback(cardUrl) ? "已複製名片網址。" : cardUrl);
+      });
+
+      document.getElementById("native-share").addEventListener("click", async function () {
+        if (!navigator.share) {
+          setStatus("這台裝置沒有系統分享。請改掃 QR，或複製網址。");
+          return;
+        }
+        var data = { title: "William Lu（呂允仁）電子名片", url: cardUrl };
+        if (navigator.canShare && !navigator.canShare(data)) {
+          data = { title: "William Lu（呂允仁）電子名片", text: cardUrl };
+        }
+        try {
+          await navigator.share(data);
+        } catch (err) {
+          if (err && err.name !== "AbortError") setStatus("分享沒有完成。可以改複製網址。");
+        }
+      });
+
+      document.getElementById("write-nfc").addEventListener("click", async function () {
+        var button = document.getElementById("write-nfc");
+        if (!("NDEFReader" in window)) {
+          setStatus("這個瀏覽器不能寫 NFC。請用 Android 的 Chrome 打開這頁；iPhone 請用 NFC Tools，把複製的網址寫進貼紙。");
+          return;
+        }
+        button.disabled = true;
+        setStatus("把 NFC 貼紙靠近手機背面，保持不動直到寫入完成。");
+        try {
+          var ndef = new NDEFReader();
+          await ndef.write({ records: [{ recordType: "url", data: cardUrl }] });
+          setStatus("寫好了。把貼紙貼在手機殼上，對方的手機碰一下就會打開這張名片。");
+          if (navigator.vibrate) navigator.vibrate(40);
+        } catch (err) {
+          var name = err && err.name;
+          if (name === "NotAllowedError") setStatus("沒有取得 NFC 權限。請允許後再試一次，並確認手機的 NFC 已開啟。");
+          else if (name === "NotSupportedError") setStatus("這支手機不支援用網頁寫入 NFC。");
+          else if (name === "AbortError") setStatus("寫入已取消。");
+          else setStatus("寫入沒有成功。請確認 NFC 已開啟，貼紙是 NTAG213 或同類型，然後再試一次。");
+        } finally {
+          button.disabled = false;
+        }
+      });
     })();
   </script>
 </body>
