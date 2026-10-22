@@ -2,10 +2,10 @@
 
 公開網址：<https://eight826.github.io/will.lu.08.github.io/>
 
-對方打開的就是這頁。手機上的網頁不能把你的手機變成 NFC 標籤，所以分享用這三種方式：
+沒有鑰匙時，這頁只顯示「名片已上鎖」，不包含電話、信箱或 vCard。聯絡資料以 AES-GCM 加密後放在頁面裡，鑰匙不在這個倉庫。
 
-1. **NFC 貼紙**：用 Android 的 Chrome 打開名片，按「寫入 NFC 貼紙」，再把貼紙貼在手機殼上。之後對方的手機碰一下，就會打開這個網站。iPhone 可以讀貼紙；寫入請用 Android Chrome，或用 NFC Tools 寫入同一個網址。
-2. **QR code**：頁面上的圖，對方用相機掃即可。
-3. **靠近分享**：按「靠近分享」，Android 選 Quick Share、iPhone 選 AirDrop，兩支手機靠在一起送出。
+對方要看內容，必須碰你手機殼上的 NFC 貼紙。貼紙裡的網址帶有鑰匙。公開網址、QR、AirDrop 都不會幫他們登入。
 
-改姓名、信箱或電話時，請同時改 `index.html` 和 `me.vcf`。網址若換掉，還要改 canonical、Open Graph，並重新產生 `qr.svg`。
+寫入貼紙時，用你自己的開啟連結（網址裡有 `k` 和 `owner=1`），在 Android Chrome 按「寫入 NFC 貼紙」。那個連結只留在你自己手上，不要貼進這個 README 或提交到 Git。
+
+限制：網頁無法確認這一碰來自某一支特定手機。任何人若用 NFC 工具讀取貼紙，就能複製同一把鑰匙。舊版頁面曾經把電話和信箱明文放上 GitHub，那些歷史紀錄還在。
