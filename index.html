@@ -4,151 +4,561 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
   <title>William Lu（呂允仁）— 電子名片</title>
-  <meta name="description" content="William Lu（呂允仁）— AI / Weather & HPC / Web">
-  <meta name="theme-color" content="#0b0b0c">
+  <meta name="description" content="William Lu（呂允仁）的電子名片。聯絡方式要碰一下 NFC 才會顯示。">
+  <meta name="referrer" content="no-referrer">
+  <meta name="theme-color" content="#080a09">
+  <meta name="color-scheme" content="dark">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-title" content="William">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <link rel="canonical" href="https://eight826.github.io/will.lu.08.github.io/">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="favicon-32.png" sizes="32x32" type="image/png">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
+  <link rel="manifest" href="site.webmanifest">
+  <meta property="og:title" content="William Lu（呂允仁）">
+  <meta property="og:description" content="碰一下 NFC 才會看到聯絡方式。">
+  <meta property="og:type" content="profile">
+  <meta property="og:url" content="https://eight826.github.io/will.lu.08.github.io/">
+  <meta property="og:image" content="https://eight826.github.io/will.lu.08.github.io/og.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="William Lu（呂允仁）電子名片">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="William Lu（呂允仁）">
+  <meta name="twitter:description" content="碰一下 NFC 才會看到聯絡方式。">
+  <meta name="twitter:image" content="https://eight826.github.io/will.lu.08.github.io/og.png">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "William Lu",
+    "alternateName": "呂允仁",
+    "url": "https://eight826.github.io/will.lu.08.github.io/"
+  }
+  </script>
   <style>
-    :root{
-      --bg:#0b0b0c;
-      --card:#121214;
-      --text:#eaeaea;
-      --muted:#a0a0a0;
-      --accent:#5fd7b9;
-      --accent-press:#4cc7aa;
-      --border:#222226;
-      --link:#9ad7ff;
-      --shadow: 0 10px 30px rgba(0,0,0,0.45), 0 2px 10px rgba(0,0,0,0.35);
-      --radius: 16px;
-      --maxw: 720px;
+    :root {
+      --bg: #080a09;
+      --ink: #f4f1e8;
+      --muted: #c5d0c4;
+      --dim: #8e9c90;
+      --line: rgba(244, 241, 232, 0.16);
+      --phosphor: #d6ff4a;
+      --phosphor-ink: #142006;
+      --plate: #f4f1e8;
+      --plate-ink: #102117;
+      --sans: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI",
+        "Noto Sans TC", "PingFang TC", "Microsoft JhengHei",
+        "WenQuanYi Micro Hei", "Droid Sans Fallback", sans-serif;
+      --serif: "Iowan Old Style", "Palatino Linotype", Palatino, "Songti TC",
+        "Noto Serif TC", "Liberation Serif", "Times New Roman", serif;
+      --mono: ui-monospace, "SF Mono", "Cascadia Mono", Menlo, Consolas, monospace;
     }
-    html,body{
-      height:100%;
-      background:var(--bg);
-      color:var(--text);
-      font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI",
-                   "Noto Sans TC", "PingFang TC", "Microsoft JhengHei",
-                   Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji", sans-serif;
-      line-height:1.6;
-      -webkit-font-smoothing:antialiased;
-      -moz-osx-font-smoothing:grayscale;
-      margin:0;
+    *, *::before, *::after { box-sizing: border-box; }
+    html { color-scheme: dark; }
+    html, body { margin: 0; min-height: 100%; }
+    body {
+      background:
+        radial-gradient(900px 420px at 100% -10%, rgba(214, 255, 74, 0.08), transparent 55%),
+        radial-gradient(680px 480px at -20% 110%, rgba(140, 176, 255, 0.07), transparent 50%),
+        var(--bg);
+      color: var(--ink);
+      font-family: var(--sans);
+      font-size: 16px;
+      line-height: 1.5;
+      -webkit-font-smoothing: antialiased;
+      padding:
+        env(safe-area-inset-top)
+        env(safe-area-inset-right)
+        env(safe-area-inset-bottom)
+        env(safe-area-inset-left);
     }
-    .wrap{
-      min-height:100%;
-      display:grid;
-      place-items:center;
-      padding:32px 16px;
+    ::selection { background: var(--phosphor); color: var(--phosphor-ink); }
+    :focus-visible { outline: 2px solid var(--phosphor); outline-offset: 3px; }
+    .card {
+      width: min(440px, 100%);
+      margin: 0 auto;
+      padding: 28px 22px 40px;
     }
-    .card{
-      width:100%;
-      max-width:var(--maxw);
-      background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0)) , var(--card);
-      border:1px solid var(--border);
-      border-radius:var(--radius);
-      box-shadow:var(--shadow);
-      padding:28px;
+    .eyebrow {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin: 0;
+      color: var(--phosphor);
+      font-size: 12px;
+      letter-spacing: 0.16em;
     }
-    .row{ display:flex; gap:24px; align-items:center; }
-    .avatar{
-      width:80px; height:80px; border-radius:14px; background:#1a1a1d; border:1px solid var(--border);
-      display:grid; place-items:center; color:#7f8cff; font-weight:700; letter-spacing:0.5px;
+    .dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--phosphor);
+      box-shadow: 0 0 0 0 rgba(214, 255, 74, 0.6);
+      animation: ping 2.6s ease-out infinite;
     }
-    .title{ flex:1; }
-    h1{
-      font-size: clamp(22px, 3.6vw, 30px);
-      line-height:1.25; margin:0 0 6px 0;
+    @keyframes ping {
+      70% { box-shadow: 0 0 0 8px rgba(214, 255, 74, 0); }
     }
-    .role{
-      color:var(--muted);
-      font-size: clamp(14px, 2.6vw, 16px);
-      margin:0;
+    .ticks {
+      height: 22px;
+      margin: 18px 0 22px;
+      background: repeating-linear-gradient(
+        90deg,
+        rgba(214, 255, 74, 0.85) 0 1px,
+        transparent 1px 14px
+      );
+      -webkit-mask-image: linear-gradient(90deg, #000 0%, #000 72%, transparent 100%);
+      mask-image: linear-gradient(90deg, #000 0%, #000 72%, transparent 100%);
     }
-    .hr{ height:1px; background:var(--border); margin:20px 0; border:0; }
-    .list{
-      display:grid; gap:10px;
-      grid-template-columns: 1fr;
+    h1 {
+      margin: 0;
+      font-family: var(--serif);
+      font-size: clamp(44px, 12vw, 64px);
+      font-weight: 700;
+      letter-spacing: -0.035em;
+      line-height: 0.92;
+      text-wrap: balance;
     }
-    .item{
-      display:flex; align-items:center; gap:12px;
-      padding:12px 14px; border:1px solid var(--border);
-      border-radius:12px; background:#121214;
+    .zh {
+      margin: 12px 0 0;
+      font-size: 20px;
+      letter-spacing: 0.28em;
     }
-    .item a{
-      color:var(--link); text-decoration:none; word-break:break-all;
+    .roles {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin: 18px 0 0;
+      padding: 0;
+      list-style: none;
     }
-    .item a:hover{ text-decoration:underline; }
-    .actions{ display:flex; gap:12px; margin-top:18px; flex-wrap:wrap; }
-    .btn{
-      appearance:none; border:1px solid var(--border);
-      background:linear-gradient(180deg, rgba(95,215,185,0.16), rgba(95,215,185,0.06));
-      color:var(--text); padding:12px 16px; border-radius:12px;
-      cursor:pointer; font-weight:600; transition:transform .02s ease, background .2s ease;
-      text-decoration:none; display:inline-flex; align-items:center; gap:10px;
+    .roles li {
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      padding: 6px 10px;
+      color: var(--muted);
+      font-size: 13px;
+      letter-spacing: 0.04em;
     }
-    .btn:active{ transform:translateY(1px); background:linear-gradient(180deg, rgba(95,215,185,0.24), rgba(95,215,185,0.08)); }
-    .btn .dot{ width:8px; height:8px; border-radius:50%; background:var(--accent); box-shadow:0 0 0 3px rgba(95,215,185,0.18); }
-    .note{ color:var(--muted); font-size:13px; margin-top:10px; }
-    footer{
-      color:var(--muted); text-align:center; font-size:12px; margin-top:16px;
+    .org {
+      margin: 14px 0 0;
+      color: var(--dim);
+      font-size: 13px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
     }
-    @media (min-width:560px){
-      .list{
-        grid-template-columns: 1fr 1fr;
+    .org a { color: inherit; }
+    .intro {
+      margin: 22px 0 0;
+      max-width: 34em;
+      color: var(--muted);
+      font-size: 16px;
+      text-wrap: pretty;
+    }
+    .save {
+      margin-top: 22px;
+    }
+    .contacts {
+      margin: 22px 0 0;
+      padding: 0;
+      list-style: none;
+    }
+    .contacts a {
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+      padding: 13px 0;
+      border-top: 1px solid var(--line);
+      color: inherit;
+      text-decoration: none;
+    }
+    .contacts li:last-child a { border-bottom: 1px solid var(--line); }
+    .k {
+      color: var(--dim);
+      font-size: 12px;
+      letter-spacing: 0.08em;
+    }
+    .v {
+      font-size: 16px;
+      overflow-wrap: anywhere;
+    }
+    .contacts a[target="_blank"] .v::after {
+      content: " ↗";
+      color: var(--phosphor);
+    }
+    .share {
+      margin-top: 36px;
+    }
+    .share h2 {
+      margin: 0;
+      font-family: var(--serif);
+      font-size: 28px;
+      font-weight: 700;
+      letter-spacing: -0.03em;
+    }
+    .lead {
+      margin: 8px 0 0;
+      color: var(--muted);
+      font-size: 15px;
+    }
+    .plate {
+      margin-top: 16px;
+      background: var(--plate);
+      color: var(--plate-ink);
+      border-radius: 22px;
+      padding: 18px 16px 14px;
+      display: grid;
+      justify-items: center;
+      gap: 10px;
+    }
+    .plate img {
+      width: min(232px, 78%);
+      height: auto;
+      display: block;
+    }
+    .host {
+      margin: 0;
+      font-family: var(--mono);
+      font-size: 12px;
+      line-height: 1.45;
+      text-align: center;
+    }
+    .stack {
+      display: grid;
+      gap: 10px;
+      margin-top: 14px;
+    }
+    .btn {
+      appearance: none;
+      width: 100%;
+      min-height: 52px;
+      padding: 0 18px;
+      border-radius: 999px;
+      border: 1px solid var(--line);
+      background: transparent;
+      color: var(--ink);
+      font: inherit;
+      font-size: 15px;
+      font-weight: 650;
+      letter-spacing: 0.01em;
+      cursor: pointer;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .btn.primary {
+      background: var(--phosphor);
+      color: var(--phosphor-ink);
+      border-color: transparent;
+      font-weight: 700;
+    }
+    .btn.quiet {
+      min-height: 44px;
+      border-color: transparent;
+      color: var(--muted);
+      text-decoration: underline;
+      text-underline-offset: 3px;
+    }
+    .btn:active { transform: translateY(1px); }
+    .btn:disabled { opacity: 0.55; cursor: wait; }
+    .status {
+      min-height: 0;
+      margin: 12px 0 0;
+      color: var(--phosphor);
+      font-size: 14px;
+    }
+    .status:empty { display: none; }
+    .steps {
+      margin: 18px 0 0;
+      padding: 0;
+      list-style: none;
+      display: grid;
+      gap: 12px;
+    }
+    .steps li {
+      display: grid;
+      grid-template-columns: 18px 1fr;
+      gap: 10px;
+      color: var(--muted);
+      font-size: 13.5px;
+      line-height: 1.55;
+    }
+    .steps li span {
+      color: var(--phosphor);
+      font-variant-numeric: tabular-nums;
+    }
+    .how { margin-top: 8px; }
+    .how summary {
+      min-height: 44px;
+      display: flex;
+      align-items: center;
+      cursor: pointer;
+      color: var(--muted);
+      font-size: 14px;
+    }
+    .fine {
+      margin: 4px 0 0;
+      color: var(--dim);
+      font-size: 12.5px;
+      line-height: 1.55;
+    }
+    footer {
+      margin-top: 28px;
+      color: var(--dim);
+      font-size: 12px;
+    }
+    .lock { margin-top: 28px; }
+    .lock h2 {
+      margin: 0 0 8px;
+      font-family: var(--serif);
+      font-size: 32px;
+      letter-spacing: -0.03em;
+      line-height: 1.1;
+    }
+    #private[hidden],
+    #owner-tools[hidden],
+    .roles[hidden],
+    .org[hidden],
+    .intro[hidden] { display: none !important; }
+    footer a { color: inherit; }
+    @media (min-width: 720px) {
+      .card {
+        margin-top: 48px;
+        margin-bottom: 48px;
+        border: 1px solid var(--line);
+        border-radius: 28px;
+        padding: 36px 28px 28px;
+        background:
+          linear-gradient(180deg, rgba(255, 255, 255, 0.035), transparent 120px),
+          #0c0f0d;
       }
     }
-    @media (max-width:400px){
-      .row{ gap:16px; }
-      .avatar{ width:68px; height:68px; }
-      .card{ padding:22px; }
+    @media (hover: hover) {
+      .btn.primary:hover { background: #e7ff86; }
+      .btn:hover { border-color: rgba(214, 255, 74, 0.5); }
+      .btn.quiet:hover { color: var(--ink); }
+      .contacts a:hover .v { color: var(--phosphor); }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .dot { animation: none; }
+      .btn:active { transform: none; }
     }
   </style>
 </head>
 <body>
-  <main class="wrap" role="main">
-    <section class="card" aria-label="電子名片">
-      <div class="row">
-        <div class="avatar" aria-hidden="true">WL</div>
-        <div class="title">
-          <h1>William Lu（呂允仁）</h1>
-          <p class="role">AI / Weather &amp; HPC / Web</p>
-        </div>
-      </div>
+  <main class="card">
+    <p class="eyebrow"><span class="dot" aria-hidden="true"></span>電子名片</p>
+    <div class="ticks" aria-hidden="true"></div>
+    <header>
+      <h1>William Lu</h1>
+      <p class="zh">呂允仁</p>
+      <ul class="roles" id="roles" hidden></ul>
+      <p class="org" id="org" hidden></p>
+    </header>
 
-      <hr class="hr">
-
-      <div class="list" aria-label="聯絡方式">
-        <div class="item">
-          <span style="color:#9ad7ff;">Email：</span>
-          <a href="mailto:williamlu16888@gmail.com">williamlu16888@gmail.com</a>
-        </div>
-        <div class="item">
-          <span style="color:#9ad7ff;">GitHub：</span>
-          <a href="https://github.com/Spidy0826" rel="noopener noreferrer" target="_blank">github.com/Spidy0826</a>
-        </div>
-        <div class="item">
-          <span style="color:#9ad7ff;">網站：</span>
-          <a href="https://will.lu.08.github.io/" rel="noopener noreferrer" target="_blank">will.lu.08.github.io</a>
-        </div>
-      </div>
-
-      <div class="actions">
-        <a class="btn" href="./me.vcf" download>
-          <span class="dot" aria-hidden="true"></span>
-          加入聯絡人（vCard）
-        </a>
-      </div>
-
-      <p class="note">提示：若 LinkedIn / GitHub 連結為範例，請在上線前替換為你的實際個人連結。</p>
+    <section class="lock" id="lock">
+      <h2>名片已上鎖</h2>
+      <p class="intro">請把你的手機碰一下我的手機。碰到之後，聯絡方式才會出現。</p>
+      <p class="fine">只知道這個網站、或是別人轉傳公開網址，都打不開。</p>
+      <p class="status" id="lock-status" role="status" aria-live="polite"></p>
     </section>
 
+    <div id="private" hidden>
+      <p class="intro" id="intro"></p>
+      <button class="btn primary save" id="save" type="button">存進通訊錄</button>
+      <ul class="contacts" id="contacts"></ul>
+      <section class="share" id="owner-tools" hidden aria-labelledby="share-title">
+        <h2 id="share-title">寫進我的手機</h2>
+        <p class="lead">這組按鈕只在你自己的開啟連結裡出現。寫入貼紙時會一併寫入鑰匙，對方碰一下才進得來。</p>
+        <div class="stack">
+          <button class="btn primary" id="write-nfc" type="button">寫入 NFC 貼紙</button>
+        </div>
+        <p class="status" id="share-status" role="status" aria-live="polite"></p>
+        <details class="how">
+          <summary>怎麼寫入與貼上</summary>
+          <ol class="steps">
+            <li><span>1</span>用 Android 的 Chrome 打開你自己的開啟連結，按「寫入 NFC 貼紙」，再把空白貼紙靠在手機背面。</li>
+            <li><span>2</span>貼在手機殼上。之後對方的手機碰一下，才會看到聯絡方式。</li>
+            <li><span>3</span>不要把打開後的網址轉傳出去。QR 和 AirDrop 也等於把鑰匙交出去，所以這頁沒有提供。</li>
+          </ol>
+          <p class="fine">網頁沒辦法證明「這一碰來自某一支特定的手機」。貼紙裡的網址就是鑰匙，別人若用 NFC 讀取那張貼紙，也可以複製。這把鎖擋得住只有公開網址的人。iPhone 可以讀貼紙；寫入請用 Android Chrome，或用 NFC Tools 寫入同一個開啟連結。NTAG213 或 NTAG215 都可以。</p>
+        </details>
+      </section>
+    </div>
+
     <footer>
-      © <span id="y"></span> William Lu. All rights reserved.
+      <p>© <span id="y">2026</span> William Lu</p>
     </footer>
   </main>
-
+  <noscript>
+    <p>需要 JavaScript 才能解開名片。沒有 JavaScript 時不會顯示聯絡方式。</p>
+  </noscript>
+  <script id="sealed" type="application/json">{"iv":"yaNGYTNgVcWyFtsG","ct":"_z4gbNW64tifZnbMQTzm9oGjggUBY31h1czFe6hwUT2gQ0THQwMlgPDnyXs9LKdqJ0v4Qt5ekWDH596In90mD_dYc9VWKUs2eev5cSH-Rs5wvrO2QzrRR0KTKzR53p47E4pyG4szUdj_Nm6Ph-oYPcOpO6SQ6xB5pWT_AsuZsmC7Nq2SJBixmBISA34sehrLKcSLDU_0xzHkfNNOJ7fv0IkTa7aAG1SsDIrEucjaSrLBcuB5JRQjYKLDGAmVis8edzKTTDFkk9M9syzjyBptBJh1kuHOMOFPb60m_KG_1_HgK-3s18quC_9oDaGb87APnRQ6tLOkitgrSXv1_Ri5O_DNX76P7SD2piB_rNAZvepUwLXiQSErz2eGNnrqHf2BLRpY_jQlQKTUQyDv8LyZg5B2uqEZJP0GahKTG2tWbXL9Qn2N7gq8lJBWRO766s4qfV2iojwWPPQIlLoe3tbZnVLNUtObc30sJPG5U4Z9SLOw-OUNafcM9A-VuXyvrbJSGN1tw8Wewdp2ib21Bw9P3sKOFrE9dKZiH0YvFcsg5OuaV-0z5chwoTbaTsOHat01nYynI-i5UjMcempt6syzGREbRVfKUmkyBrNx53F-5nhWHlQOHimQ_bQW36aY61jluHkPZDZ5IR624mVLRJkvcZsU6rk-F6LnTyigBW92E_1NC8JD1FdPMzUNcAAOny8GfjeesZXBAiiFOWbUMYYddfC51eMKDNk04I7vLRF2XlwyvMKNbhYKGOAypPDdkyKozgw5st4w5DlPvUOocUHskVg9nFuE-EFtDX1okmODOMdQ3OQlFt9m4RBTJAuv9qq_sBrJlYISjraDmKYDhftd_cynJ5jzgBCuWPyCw93dheeIUUCqAlt4_q0bCJqITHB67IG8UC4aZR6XIUspCNazjYrK585efjuBJo8JyfGJzp19QvIWTZUIPSD1YW9kXA_HBXRHxH5lwPDCPU2oR4A2jzg9mGi77k2W2C8lPUkOea9O1WYRFASO9tXba4fS7j5skJeLKQ9AqlZurpn2izXdhZEz2qDGDDBG0GdvMduPx-KMy5Tjz6njSE18U-Gs_rTlROB9Zdgbb89mtLyb_22PpimpaVMFMIzOtrdb7X7kdB6WsbEI2jrdhC1-ycXECYCNxxTkiiJ8CBZlIr2H5wpLoWRObC9HEJaaikqqRaxuNjbVNUIWmi4DsxDmknZvwSqWbzQjYR-mzq8xds3FAg-pkiG6pRcqKKwVteTaAKCZ2IK3WjQkMpNuMxc9YZLtW6HbpiVtpHE8LMlJFsXm1PBAjDMnY73ypLlQTIkSvKTIqySGiAWZoc80UPBcTKrMZAr4Oxjo1V80Dnr73dyKPnvo"}</script>
   <script>
-    (function(){
-      var el = document.getElementById('y');
-      try { el.textContent = new Date().getFullYear(); } catch(e) { /* noop */ }
+    (function () {
+      var year = document.getElementById("y");
+      if (year) year.textContent = String(new Date().getFullYear());
+
+      var sealed = JSON.parse(document.getElementById("sealed").textContent);
+      var publicUrl = document.querySelector('link[rel="canonical"]').href;
+      var lockStatus = document.getElementById("lock-status");
+      var shareStatus = document.getElementById("share-status");
+      var openKey = "";
+
+      function b64urlToBytes(value) {
+        var pad = value.length % 4 === 0 ? "" : "=".repeat(4 - (value.length % 4));
+        var b64 = value.replace(/-/g, "+").replace(/_/g, "/") + pad;
+        var bin = atob(b64);
+        var out = new Uint8Array(bin.length);
+        for (var i = 0; i < bin.length; i++) out[i] = bin.charCodeAt(i);
+        return out;
+      }
+
+      function setShareStatus(message) {
+        shareStatus.textContent = message;
+      }
+
+      async function decryptCard(keyText) {
+        var raw = b64urlToBytes(keyText);
+        var cryptoKey = await crypto.subtle.importKey("raw", raw, "AES-GCM", false, ["decrypt"]);
+        var plain = await crypto.subtle.decrypt(
+          { name: "AES-GCM", iv: b64urlToBytes(sealed.iv) },
+          cryptoKey,
+          b64urlToBytes(sealed.ct)
+        );
+        return JSON.parse(new TextDecoder().decode(plain));
+      }
+
+      function contactLink(label, value, href, external) {
+        var li = document.createElement("li");
+        var a = document.createElement("a");
+        a.href = href;
+        if (external) {
+          a.target = "_blank";
+          a.rel = "noopener noreferrer";
+        }
+        var k = document.createElement("span");
+        k.className = "k";
+        k.textContent = label;
+        var v = document.createElement("span");
+        v.className = "v";
+        v.textContent = value;
+        a.append(k, v);
+        li.append(a);
+        return li;
+      }
+
+      function render(card, owner) {
+        var roles = document.getElementById("roles");
+        roles.replaceChildren();
+        card.roles.forEach(function (role) {
+          var li = document.createElement("li");
+          li.textContent = role;
+          roles.append(li);
+        });
+        roles.hidden = false;
+
+        var org = document.getElementById("org");
+        org.replaceChildren();
+        var orgLink = document.createElement("a");
+        orgLink.href = card.orgUrl;
+        orgLink.rel = "noopener noreferrer";
+        orgLink.textContent = card.org;
+        org.append(orgLink);
+        org.hidden = false;
+
+        document.getElementById("intro").textContent = card.intro;
+        document.getElementById("contacts").replaceChildren(
+          contactLink("電子郵件", card.email, "mailto:" + card.email, false),
+          contactLink("手機", card.phoneDisplay, "tel:" + card.phone, false),
+          contactLink("GitHub", card.githubLabel, card.github, true),
+          contactLink("部落格", card.blogLabel, card.blog, true)
+        );
+
+        document.getElementById("lock").hidden = true;
+        document.getElementById("private").hidden = false;
+        document.getElementById("owner-tools").hidden = !owner;
+
+        document.getElementById("save").addEventListener("click", function () {
+          var blob = new Blob([card.vcard], { type: "text/vcard;charset=utf-8" });
+          var url = URL.createObjectURL(blob);
+          var a = document.createElement("a");
+          a.href = url;
+          a.download = "William-Lu.vcf";
+          document.body.append(a);
+          a.click();
+          a.remove();
+          URL.revokeObjectURL(url);
+        });
+      }
+
+      function remember(keyText, owner) {
+        try {
+          sessionStorage.setItem("wl-card-key", keyText);
+          sessionStorage.setItem("wl-card-owner", owner ? "1" : "0");
+          return true;
+        } catch (err) {
+          return false;
+        }
+      }
+
+      document.getElementById("write-nfc").addEventListener("click", async function () {
+        var button = document.getElementById("write-nfc");
+        var secretUrl = publicUrl + (publicUrl.indexOf("?") === -1 ? "?" : "&") + "k=" + encodeURIComponent(openKey);
+        if (!("NDEFReader" in window)) {
+          setShareStatus("這個瀏覽器不能寫 NFC。請用 Android 的 Chrome 打開你自己的開啟連結；iPhone 請用 NFC Tools，寫入同一個連結。");
+          return;
+        }
+        button.disabled = true;
+        setShareStatus("把 NFC 貼紙靠近手機背面，保持不動直到寫入完成。");
+        try {
+          var ndef = new NDEFReader();
+          await ndef.write({ records: [{ recordType: "url", data: secretUrl }] });
+          setShareStatus("寫好了。貼紙裡有鑰匙。貼在手機殼上，對方碰一下才會看到聯絡方式。");
+          if (navigator.vibrate) navigator.vibrate(40);
+        } catch (err) {
+          var name = err && err.name;
+          if (name === "NotAllowedError") setShareStatus("沒有取得 NFC 權限。請允許後再試一次，並確認手機的 NFC 已開啟。");
+          else if (name === "NotSupportedError") setShareStatus("這支手機不支援用網頁寫入 NFC。");
+          else if (name === "AbortError") setShareStatus("寫入已取消。");
+          else setShareStatus("寫入沒有成功。請確認 NFC 已開啟，貼紙是 NTAG213 或同類型，然後再試一次。");
+        } finally {
+          button.disabled = false;
+        }
+      });
+
+      var params = new URLSearchParams(location.search);
+      var keyFromUrl = params.get("k") || "";
+      var ownerFromUrl = params.get("owner") === "1";
+      var keyText = keyFromUrl;
+      var owner = ownerFromUrl;
+      if (!keyText) {
+        try {
+          keyText = sessionStorage.getItem("wl-card-key") || "";
+          owner = sessionStorage.getItem("wl-card-owner") === "1";
+        } catch (err) {
+          keyText = "";
+        }
+      }
+      if (!keyText) return;
+
+      decryptCard(keyText).then(function (card) {
+        openKey = keyText;
+        var stored = remember(keyText, owner);
+        if (keyFromUrl && stored) {
+          params.delete("k");
+          params.delete("owner");
+          var search = params.toString();
+          history.replaceState(null, "", location.pathname + (search ? "?" + search : "") + location.hash);
+        }
+        render(card, owner);
+      }).catch(function () {
+        lockStatus.textContent = "這組鑰匙不對，名片沒有打開。";
+      });
     })();
   </script>
 </body>
